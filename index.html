@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Trung Nguyên Hot War | Anh Em Idea</title>
+  <meta name="description" content="Trung Nguyên Hot War - Anh Em Idea. Tiểu sử huyền thoại Discord.">
+  <meta name="keywords" content="Trung Nguyên Hot War, Anh Em Idea, Discord">
+
+  <meta property="og:title" content="Trung Nguyên Hot War | Anh Em Idea">
+  <meta property="og:description" content="Trung Nguyên Hot Treo Discord">
+  <meta property="og:type" content="website">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #fff;
+      background: #070711;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      width: 420px;
+      height: 420px;
+      top: -180px;
+      left: -130px;
+      background: #6d28d9;
+      filter: blur(150px);
+      opacity: .22;
+      pointer-events: none;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      width: 420px;
+      height: 420px;
+      right: -180px;
+      bottom: -180px;
+      background: #db2777;
+      filter: blur(160px);
+      opacity: .14;
+      pointer-events: none;
+    }
+
+    nav {
+      height: 75px;
+      padding: 0 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #242039;
+      background: #080811dd;
+      backdrop-filter: blur(15px);
+      position: relative;
+      z-index: 5;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: bold;
+      letter-spacing: .5px;
+    }
+
+    .logo span {
+      color: #a855f7;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      color: #aaa8bd;
+      text-decoration: none;
+      font-size: 14px;
+      transition: .3s;
+    }
+
+    .nav-links a:hover {
+      color: #b77aff;
+    }
+
+    .hero {
+      min-height: 650px;
+      padding: 70px 20px 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      background:
+        radial-gradient(circle at 50% 25%, #5121a833, transparent 38%),
+        linear-gradient(180deg, #0b0918, #080811);
+    }
+
+    .hero-content {
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .avatar-wrap {
+      width: 190px;
+      height: 190px;
+      margin: 0 auto 30px;
+      padding: 6px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #a855f7, #4f46e5, #ec4899);
+      box-shadow:
+        0 0 25px #8b5cf688,
+        0 0 80px #7c3aed44;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .avatar {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #0c0a18;
+      background: #171326;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 8px 18px;
+      border: 1px solid #7136c8;
+      border-radius: 50px;
+      background: #25133d;
+      color: #c084fc;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(36px, 7vw, 75px);
+      line-height: 1.1;
+      font-weight: 800;
+      margin-bottom: 22px;
+      background: linear-gradient(90deg, #c084fc, #fff, #a5b4fc, #f0abfc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 30px #8b5cf655;
+    }
+
+    .hero-subtitle {
+      color: #b4b0c8;
+      font-size: clamp(16px, 3vw, 21px);
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .hero-subtitle strong {
+      color: #d8b4fe;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: bold;
+      transition: .3s;
+    }
+
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(90deg, #7c3aed, #9333ea);
+      box-shadow: 0 0 25px #7c3aed55;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 35px #a855f777;
+    }
+
+    .btn-outline {
+      color: #c4b5fd;
+      border: 1px solid #6336a8;
+      background: #171125;
+    }
+
+    .btn-outline:hover {
+      background: #25183d;
+      transform: translateY(-3px);
+    }
+
+    .section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 75px 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .section-heading .mini-line {
+      width: 55px;
+      height: 3px;
+      background: #a855f7;
+      margin: 0 auto 17px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #a855f7;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(25px, 5vw, 38px);
+      margin-bottom: 15px;
+      background: linear-gradient(90deg, #fff, #c4b5fd);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .section-heading p {
+      color: #9290a7;
+      line-height: 1.7;
+      max-width: 650px;
+      margin: auto;
+      font-size: 15px;
+    }
+
+    .bio-box {
+      max-width: 850px;
+      margin: 0 auto 35px;
+      padding: 30px;
+      text-align: center;
+      border: 1px solid #33215b;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #151024cc, #0e0d18cc);
+      box-shadow: 0 0 35px #4c1d9530;
+    }
+
+    .bio-box .quote {
+      color: #c084fc;
+      font-size: 17px;
+      font-style: italic;
+      margin-bottom: 18px;
+    }
+
+    .bio-box p {
+      color: #aaa8bd;
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      padding: 25px 20px;
+      min-height: 210px;
+      border: 1px solid #28213f;
+      border-radius: 16px;
+      background: #10101bcc;
+      transition: .3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: #7c3aed;
+      box-shadow: 0 10px 35px #4c1d9533;
+    }
+
+    .card .icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #281449;
+      border: 1px solid #6336a8;
+      font-size: 23px;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: #8e8ba4;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .hot-treo {
+      max-width: 850px;
+      margin: 50px auto 0;
+      padding: 22px;
+      text-align: center;
+      border-top: 1px solid #3b2265;
+      border-bottom: 1px solid #3b2265;
+    }
+
+    .hot-treo h3 {
+      font-size: clamp(22px, 4vw, 32px);
+      color: #d8b4fe;
+      text-shadow: 0 0 18px #a855f7aa;
+      letter-spacing: .5px;
+    }
+
+    .hot-treo p {
+      color: #817d9a;
+      margin-top: 10px;
+      font-size: 13px;
+    }
+
+    footer {
+      padding: 28px 20px;
+      border-top: 1px solid #211a36;
+      text-align: center;
+      color: #68647b;
+      font-size: 13px;
+      position: relative;
+      z-index: 1;
+    }
+
+    footer strong {
+      color: #a78bfa;
+    }
+
+    @media (max-width: 850px) {
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        padding: 0 20px;
+      }
+
+      .logo {
+        font-size: 19px;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .nav-links a {
+        font-size: 12px;
+      }
+
+      .hero {
+        min-height: 600px;
+        padding-top: 50px;
+      }
+
+      .avatar-wrap {
+        width: 150px;
+        height: 150px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .bio-box {
+        padding: 24px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo">Anh Em <span>Idea</span></div>
+
+    <div class="nav-links">
+      <a href="#">Trang chủ</a>
+      <a href="#tieu-su">Tiểu sử</a>
+      <a href="#lien-he">Liên hệ</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- PHẦN GIỚI THIỆU CHÍNH -->
+    <section class="hero">
+      <div class="hero-content">
+
+        <div class="avatar-wrap">
+          <img
+            class="avatar"
+            src="avatar.png"
+            alt="Ảnh Trung Nguyên Hot War"
+            onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=&quot;width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:50px&quot;>👑</div>';"
+          >
+        </div>
+
+        <div class="tag">ANH EM IDEA</div>
+
+        <h1>Trung Nguyên Hot War</h1>
+
+        <p class="hero-subtitle">
+          <strong>Trung Nguyên</strong> huyền thoại sàn war Discord
+        </p>
+
+        <div class="buttons">
+          <a class="btn btn-primary" href="#tieu-su">
+            ⚔️ Xem tiểu sử
+          </a>
+
+          <a class="btn btn-outline" href="#lien-he">
+            💬 Liên hệ
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TIỂU SỬ -->
+    <section class="section" id="tieu-su">
+
+      <div class="section-heading">
+        <div class="mini-line"></div>
+        <h2>Tiểu sử huyền thoại Discord</h2>
+        <p>
+          Hành trình và dấu ấn của Trung Nguyên Hot War
+          trong cộng đồng Discord.
+        </p>
+      </div>
+
+      <div class="bio-box">
+        <div class="quote">
+          “Không chỉ là một cái tên, mà là một huyền thoại.”
+        </div>
+
+        <p>
+          Trung Nguyên Hot War là một cái tên gắn liền với
+          những cuộc trò chuyện, những trận war và tinh thần
+          kết nối cộng đồng trên Discord.
+          Đây là không gian riêng để lưu giữ dấu ấn,
+          chia sẻ thông tin và xây dựng cộng đồng Anh Em Idea.
+        </p>
+      </div>
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="icon">👑</div>
+          <h3>Huyền thoại sàn war</h3>
+          <p>
+            Một cái tên nổi bật trong những cuộc war
+            và hoạt động cộng đồng Discord.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">⚔️</div>
+          <h3>Trung Nguyên Hot War</h3>
+          <p>
+            Dấu ấn riêng gắn với phong cách
+            và cá tính của cộng đồng.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">💬</div>
+          <h3>Anh Em Idea</h3>
+          <p>
+            Không gian kết nối, chia sẻ và
+            lưu giữ những kỷ niệm.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🌐</div>
+          <h3>Cộng đồng Discord</h3>
+          <p>
+            Nơi giao lưu, trò chuyện và kết nối
+            cùng những người anh em.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- DÒNG BÊN DƯỚI -->
+      <div class="hot-treo">
+        <h3>Trung Nguyên Hot Treo Discord</h3>
+        <p>Huyền thoại vẫn còn được nhắc đến.</p>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="lien-he">
+    © 2026 <strong>Anh Em Idea</strong> — Trung Nguyên Hot War
+  </footer>
+
+</body>
+</html>
+
